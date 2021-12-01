@@ -1,14 +1,10 @@
 (ns advent-of-code-2021.day1.core
-  (:gen-class :main true))
+  (:gen-class :main true)
+  (:require [clojure.string :as str]))
 
-(defn -main [] (println "Hello in day 1"))
-
-(defn read-input [part]
-  (slurp (str "src/advent_of_code_2021/day1/puzzleInput.txt")))
-
-(defn parse-input []
-  (for [depth (-> (read-input "part1") (.split "\n"))]
-    (Integer/parseInt depth)))
+(defn parse-input [puzzleInput]
+  (for [depths (str/split-lines puzzleInput)]
+    (Integer/parseInt depths)))
 
 (load "part1")
 (load "part2")
