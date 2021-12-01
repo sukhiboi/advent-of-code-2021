@@ -1,9 +1,5 @@
 (in-ns 'advent-of-code-2021.day1.core)
 
-(defn parse-input []
-  (for [depth (-> (read-input "part1") (.split "\n"))]
-    (Integer/parseInt depth)))
-
 (defn part1 []
   (->> (parse-input)
        (partition 2 1)
