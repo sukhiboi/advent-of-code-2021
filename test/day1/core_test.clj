@@ -6,7 +6,7 @@
   (testing "Testing Parsing function"
     (is (= (parse-input "12\n13\n14") '(12 13 14)))))
 
-(def day1-aoc-example (parse-input (slurp "test/day1/testInput.txt")))
+(def day1-aoc-example '(199 200 208 210 200 207 240 269 260 263))
 
 (deftest day1-test
   (testing "Testing Part1"
