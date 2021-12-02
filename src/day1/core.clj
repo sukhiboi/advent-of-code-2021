@@ -1,7 +1,6 @@
 (ns day1.core
-  (:gen-class :main true)
-  (:require [core])
-  (:require [clojure.string :as str]))
+  (:require [core]
+            [clojure.string :as str]))
 
 (defn parse-input [puzzle-input]
   (for [depths (str/split-lines puzzle-input)]

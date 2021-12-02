@@ -1,5 +1,4 @@
 (ns day2.core
-  (:gen-class :main true)
   (:require [core]
             [clojure.string :as str]))
 
@@ -21,5 +20,4 @@
       part1-solution (part1 puzzle-input)
       part2-solution (part2 puzzle-input)
       ]
-  (core/present-puzzle-info day-number part1-solution part2-solution)
-  ))
+  (core/present-puzzle-info day-number part1-solution part2-solution)))

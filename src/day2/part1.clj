@@ -1,16 +1,16 @@
 (in-ns 'day2.core)
 
-(defn updatePosition [
-                      {horizontal-distance :horizontal-distance depth :depth :as current-position}
-                      [direction displacement :as movement]]
+(defn updatePosition-part1 [current-position [direction displacement :as movement]]
   (cond
-    (= direction :forward) {:horizontal-distance (+ horizontal-distance displacement) :depth depth}
-    (= direction :up) {:horizontal-distance horizontal-distance :depth (- depth displacement)}
-    (= direction :down) {:horizontal-distance horizontal-distance :depth (+ depth displacement)}
-    ))
+    (= direction :forward) (assoc current-position
+                          :horizontal-distance (+ (:horizontal-distance current-position) displacement))
+    (= direction :up) (assoc current-position
+                          :depth (- (:depth current-position) displacement))
+    (= direction :down) (assoc current-position
+                          :depth (+ (:depth current-position) displacement))))
 
 (defn part1 [input]
   (->> input
-       (reduce updatePosition (hash-map :horizontal-distance 0 :depth 0))
+       (reduce updatePosition-part1 (hash-map :horizontal-distance 0 :depth 0))
        vals
        (apply *)))
