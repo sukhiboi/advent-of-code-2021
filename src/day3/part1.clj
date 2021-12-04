@@ -8,5 +8,5 @@
                                        :epsilon (if (< (get %2 "0") (get %2 "1")) 0 1)
                                        }) {:gamma "" :epsilon ""})
           ((juxt :gamma :epsilon))
-          (map #(Integer/parseInt % 2))
+          (map binary-to-decimal)
           (apply *)))

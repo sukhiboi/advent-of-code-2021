@@ -8,6 +8,8 @@
        (map #(str/split % #""))
        (into [])))
 
+(defn binary-to-decimal [binary] #(Integer/parseInt binary 2))
+
 (load "part1")
 (load "part2")
 
